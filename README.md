@@ -38,3 +38,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Steps
 - Next.js, Tailwind;
 - Autentication with Clerk, added secrets and auth middleware;
+    - clerk.com
+- ui.shadcn lib;
