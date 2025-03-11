@@ -39,4 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - Next.js, Tailwind;
 - Autentication with Clerk, added secrets and auth middleware;
     - clerk.com
-- ui.shadcn lib;
+- ui.shadcn lib (Button, ToggleMode for theme);
+- Navbar and tags with Tailwind
+    - more Tailwind
+    - use SSR for Navbar desctop for performance, and CSR for Navbar for interactivity
