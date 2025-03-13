@@ -47,4 +47,5 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
     - instal Prisma locally
     - create schema with relationships locally
     - push schema to the Noen instance
+        - making Clerk and Neon know about a user (webhooks later?)
 
