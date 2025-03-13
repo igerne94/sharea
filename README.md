@@ -43,3 +43,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - Navbar and tags with Tailwind
     - more Tailwind
     - use SSR for Navbar desctop for performance, and CSR for Navbar for interactivity
+- Connecting to Postgres
+    - use Neon, integrate prisma
+    - instal Prisma locally
+    - create schema with relationships locally
+    - push schema to the Noen instance
