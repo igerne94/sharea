@@ -7,6 +7,8 @@ import { Avatar, AvatarImage } from "./ui/avatar";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { ImageIcon, Loader2Icon, SendIcon } from "lucide-react";
+import { createPost } from "@/actions/post.action";
+import toast from "react-hot-toast";
 
 
 function CreatePost() {
@@ -18,6 +20,24 @@ function CreatePost() {
 
     const handleSubmit = async () => {
         // e. is not coming from a form, no need to preventDefault
+        if (!content.trim() && !imageUrl) return;
+        setIsPosting(true);
+        try {
+            const res = await createPost(content, imageUrl); // server acttuon
+            if (res.success) {
+                // reset form
+                setContent("");
+                setImageUrl("");
+                setShowImageUpload(false);
+
+                toast.success("Post created successfully");
+            }
+        } catch (e) {
+            console.error(e);
+            toast.error("Failed to create post");
+        } finally {
+            setIsPosting(false);
+        }
      }
 
   return (
