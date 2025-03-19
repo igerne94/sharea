@@ -59,4 +59,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
     - create schema with relationships locally
     - push schema to the Noen instance
         - making Clerk and Neon know about a user (webhooks later?)
+- Implemented parent/server YouMayKnowm component wth client FollowButton;
+- getRandomUsersFromDB w Prisma,
+- implement follow/unfollow toggle with immediate UI updating;
 
