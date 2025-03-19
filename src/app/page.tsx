@@ -1,5 +1,6 @@
 import CreatePost from "@/components/CreatePost";
 import { currentUser } from "@clerk/nextjs/server";
+import YouMayKnow from '@/components/YouMayKnow'
 
 export default async function Home() {
   const user = await currentUser();
@@ -10,7 +11,7 @@ export default async function Home() {
       </div>
 
       <div className="hidden lg:block lg:col-span-4 sticky top-20">
-        Who to follow
+        <YouMayKnow />
       </div>
     </div>
   );
