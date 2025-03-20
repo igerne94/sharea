@@ -5,6 +5,8 @@ import { getDBUserId } from "./user.action";
 import { revalidatePath } from "next/cache";
 import { Prisma } from "@prisma/client";
 
+// server actions (run on the server)
+
 export async function createPost(content: string, image: string) {
     try {
         const userId = await getDBUserId();
