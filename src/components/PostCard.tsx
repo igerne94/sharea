@@ -1,7 +1,8 @@
 "use client";
-import { getPosts, toggleLike } from '@/actions/post.action';
+import { createComment, getPosts, toggleLike } from '@/actions/post.action';
 import { useUser } from '@clerk/nextjs';
 import React, { useState } from 'react'
+import toast from 'react-hot-toast';
 
 type Posts = Awaited<ReturnType<typeof getPosts>>;
 type Post = Posts[number];
@@ -32,9 +33,39 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null}) {
         }
     }
 
-    const handleComment = async () => { }
+    const handleComment: string = async () => {
+        if (!newComment || isCommenting) return;
+        try {
+            setIsCommenting(true);
+            const res = await createComment(post.id, newComment);
+            if (res?.success) {
+                toast.success("Comment added successfully");
+                setNewComment("");
+            }
+        } catch (error) {
+            toast.error("Error adding comment");
+            console.error("Error adding comment", error);
+        } finally {
+            setIsCommenting(false);
+        }
+     }
 
-    const handleDeletePost = async () => { }
+    const handleDeletePost = async () => { 
+        if (isDeleting) return;
+        try {
+            setIsDeleting(true);
+            const res = await deletePost(post.id);
+            if (res?.success) {
+                toast.success("Post deleted successfully");
+            } else {
+                throw new Error("Error deleting post");
+            }
+        } catch (error) {
+            console.error("Error deleting post", error);
+        } finally {
+            setIsDeleting(false);
+        }
+    }
     
     return (
         <div>PostCard</div>
