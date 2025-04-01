@@ -21,18 +21,10 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Demo
-   <p align="center">
-  <img src="./extra.docs/1.png" width="45%" />
-  <img src="./extra.docs/2.png" width="45%" />
-</p>
-
-<p align="center">
-  <img src="./extra.docs/3.png" width="45%" />
-  <img src="./extra.docs/4.png" width="45%" />
-</p>
+  https://sharea.vercel.app/
 
 ## Highlights
-- Tech stack: Next.js App Router, Postgres, Prisma, Clerk & TypeScript
+- Tech stack: Next.js App Router, Postgres, Prisma, Neon, Clerk, TypeScript
 - Server Components, Layouts, Route Handlers, Server Actions
 - Special Next.js files: loading.tsx, error.tsx, not-found.tsx
 - API Integration using Route Handlers
@@ -62,4 +54,14 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 - Implemented parent/server YouMayKnowm component wth client FollowButton;
 - getRandomUsersFromDB w Prisma,
 - implement follow/unfollow toggle with immediate UI updating;
+
+... [TODO: add more steps description]
+
+- Integration with UploadThing for drag-and-drop images (signed w GitHub)
+    - this step prevented from using next's Image. => <img>
+- added postinstall script to include prisma in deployment
+- deployed with Vercel (signed w GitHub)
+    - added env vars to Vercel
+
+
 
