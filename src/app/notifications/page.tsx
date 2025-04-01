@@ -9,7 +9,6 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { formatDistanceToNow } from 'date-fns';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { HeartIcon, MessageCircleIcon, UserPlusIcon } from 'lucide-react';
-import Image from 'next/image';
 
 type Notifications = Awaited<ReturnType<typeof getNotifications>>;
 type Notification = Notifications[number];
@@ -100,8 +99,9 @@ function NotificationsPage() {
                                                 <div className="pl-6 space-y-2">
                                                     <div className="text-sm text-muted-foreground rounded-md p-2 bg-muted/30 mt-2">
                                                         <p>{notification.post.content}</p>
-                                                        {notification.post.image && (
-                                                            <Image
+                                                    {notification.post.image && (
+                                                            // eslint-disable-next-line @next/next/no-img-element
+                                                            <img
                                                                 src={notification.post.image}
                                                                 alt="Post content"
                                                                 className="mt-2 rounded-md w-full max-w-[200px] h-auto object-cover"

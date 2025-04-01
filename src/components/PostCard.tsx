@@ -10,7 +10,6 @@ import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 import { formatDistanceToNow } from 'date-fns';
 import { DeleteAlertDialog } from './DeleteAlertDialog';
-import Image from 'next/image';
 import { HeartIcon, LogInIcon, MessageCircleIcon, SendIcon } from 'lucide-react';
 
 type Posts = Awaited<ReturnType<typeof getPosts>>;
@@ -116,7 +115,12 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null}) {
                     {/* POST IMAGE */}
                     {post.image && (
                         <div className="rounded-lg overflow-hidden">
-                            <Image src={post.image} alt="Post content" className="w-full h-auto object-cover" />
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={post.image}
+                                alt="Post content"
+                                className="w-full h-auto object-cover"
+                            />
                         </div>
                     )}
 
